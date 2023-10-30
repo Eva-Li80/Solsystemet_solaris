@@ -147,3 +147,9 @@ body {
         color: white;
     
 }
+
+/* change background */
+
+.test{
+    background-color: blue;
+}
