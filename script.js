@@ -14,9 +14,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const neptunus = document.querySelector("#neptunus");
 
 
-  const solen = document.querySelector("#sun")
-  const about = document.querySelector("#about-planet");
-  const name = document.querySelector("#planet-name");
+//   const solen = document.querySelector("#sun")
+  const aboutPlanet = document.querySelector("#about-planet");
+  const planetName = document.getElementById("planet-name");
+  const latinName = document.getElementById("latin-name")
+  const description = document.getElementById("description")
+
+  const moreInfo = document.querySelector("#more-info");
+  const circumference = document.getElementById("circumference")
+  const distance = document.getElementById("distance")
+  const maxTemp = document.getElementById("max-temp")
+  const minTemp = document.getElementById("min-temp")
+
+  const moonsInfo = document.querySelector("#moons-info")
+  const moons = document.getElementById("moons")
+
   let currentPlanet;
 
   async function fetchApi(url) {
@@ -30,11 +42,38 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+
+  //skapar och lägger in innehållet om planeterna
   function createContent(planet) {
-    name.textContent = planet.name;
-    about.appendChild(name);
+    if(aboutPlanet){
+        planetName.textContent = planet.name;
+        latinName.textContent = planet.latinName
+        description.textContent = planet.desc
+        aboutPlanet.appendChild(planetName);
+        aboutPlanet.appendChild(latinName)
+        aboutPlanet.appendChild(description)
+
+        circumference.textContent = planet.circumference
+        distance.textContent = planet.distance
+        maxTemp.textContent = planet.temp.day
+        minTemp.textContent = planet.temp.night
+        moreInfo.append(circumference)
+        moreInfo.append(distance)
+        moreInfo.append(maxTemp)
+        moreInfo.append(minTemp)
+
+        moons.textContent = planet.moons || ""
+        moonsInfo.append(moons)
+    }else {
+        console.error("element is null")
+    }
+   
+
+
   }
 
+
+  // visar info om de olika planeterna
   async function displayInfoFromPlanet(infoPlanet) {
     try {
       const api = await fetchApi(url);
@@ -45,16 +84,19 @@ document.addEventListener("DOMContentLoaded", function () {
       if (planet) {
         createContent(planet);
         currentPlanet = infoPlanet;
-        solen.style.backgroundColor = "red"
+        // solen.style.backgroundColor = "red"
         
       } else {
         console.log("Something went wrong!");
       }
     } catch (error) {
+        console.error("Error fetching data:", error);
       throw new Error("Something went wrong!", error);
     }
   }
 
+
+  //eventlistener till de olika planeterna
   sun.addEventListener("click", async () => {
     await displayInfoFromPlanet("solen");
   });
@@ -62,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
     await displayInfoFromPlanet("merkurius");
   });
   venus.addEventListener("click", async () => {
-    await displayInfoFromPlanet("merkurius");
+    await displayInfoFromPlanet("venus");
   });
   earth.addEventListener("click", async () => {
     await displayInfoFromPlanet("jorden");

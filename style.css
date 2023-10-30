@@ -139,12 +139,17 @@ body {
     transform: translate(-50%, -50%);
     background-color: darkblue;
     padding: 20px;
+    color: white;
    
 }
 
+#about-planet, #more-info{
+    border-bottom: 2px solid gray;
+}
+
 #about-planet{
-        font-size: 50px;
         color: white;
+        
     
 }
 
