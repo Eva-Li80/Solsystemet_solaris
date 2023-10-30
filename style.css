@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(
+    45deg,
+    rgb(44, 44, 78),
+    rgb(8, 8, 62),
+    rgb(0, 0, 13)
+  );
+  font-family: "Hind", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/*header*/
+
+#solar-system{
+ display: flex;
+ flex-direction: column;
+ align-items: flex-end;
+ position: absolute;
+ top: 3rem;
+ right: 3rem;
+ color: white;
+}
+
+#solar-system #heading{
+    font-family: "Hind", sans-serif;
+    font-size: 3rem;
+    letter-spacing: 0.3rem;
+}
+
+#solar-system #subheading{
+    font-family: "PT Serif", serif;
+    color: rgb(206, 175, 1);
+    letter-spacing: 0.5rem;
+    font-size: 1.5rem;
+}
