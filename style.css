@@ -13,34 +13,112 @@ body {
   );
   font-family: "Hind", sans-serif;
   height: 100vh;
-  width: 100vw;
+  width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 /*header*/
 
-#solar-system{
- display: flex;
- flex-direction: column;
- align-items: flex-end;
- position: absolute;
- top: 3rem;
- right: 3rem;
- color: white;
+#solar-system {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  color: white;
 }
 
-#solar-system #heading{
-    font-family: "Hind", sans-serif;
-    font-size: 3rem;
-    letter-spacing: 0.3rem;
+#solar-system #heading {
+  font-family: "Hind", sans-serif;
+  font-size: 3rem;
+  letter-spacing: 0.3rem;
 }
 
-#solar-system #subheading{
-    font-family: "PT Serif", serif;
-    color: rgb(206, 175, 1);
-    letter-spacing: 0.5rem;
-    font-size: 1.5rem;
+#solar-system #subheading {
+  font-family: "PT Serif", serif;
+  color: rgb(206, 175, 1);
+  letter-spacing: 0.5rem;
+  font-size: 1.5rem;
+}
+
+/*main planet container */
+#sun-container {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background-color: rgb(248, 192, 49);
+  margin-left: -300px;
+  overflow: hidden;
+}
+
+#planets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#planets > div {
+  margin: 0 40px;
+  cursor: pointer;
+  color: white;
+}
+
+#planets #mercurius {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: gray;
+  margin-left: 100px;
+}
+
+#planets #venus {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgb(216, 216, 216);
+}
+
+#planets #earth {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgb(102, 141, 251);
+}
+
+#planets #mars {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgb(252, 84, 84);
+}
+
+#planets #jupiter {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgb(255, 161, 84);
+}
+
+#planets #saturnus {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: rgb(198, 168, 104);
+}
+
+#planets #uranus {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(200, 229, 252);
+}
+
+#planets #neptunus {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(110, 149, 177);
 }
