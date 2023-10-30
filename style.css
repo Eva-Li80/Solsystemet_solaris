@@ -129,3 +129,21 @@ body {
   border-radius: 50%;
   background-color: rgb(110, 149, 177);
 }
+
+
+/*module*/
+#module{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: darkblue;
+    padding: 20px;
+   
+}
+
+#about-planet{
+        font-size: 50px;
+        color: white;
+    
+}
