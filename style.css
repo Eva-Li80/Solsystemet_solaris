@@ -50,6 +50,7 @@ body {
   display: flex;
   position: absolute;
   left: 0;
+  cursor: pointer;
 
 }
 #sun {
@@ -137,22 +138,50 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: darkblue;
     padding: 20px;
     color: white;
-   
 }
+
+
 
 #about-planet, #more-info{
     border-bottom: 2px solid gray;
 }
 
-#about-planet{
-        color: white;
-        
-    
+#about-planet #planet-name{
+    font-family: "Hind", sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 0.3rem;
 }
 
+#about-planet #latin-name{
+    font-family: "PT Serif", serif;
+    color: rgb(206, 175, 1);
+    letter-spacing: 0.5rem;
+    font-size: 1.5rem;
+    padding-bottom: 15px;
+}
+
+#about-planet #description{
+    font-size: 15px;
+    padding-bottom: 15px;
+}
+
+#moons-info {
+    margin-top: 15px;
+ 
+}
+
+#more-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#more-info > p {
+    flex: 0 0 calc(50% - 10px);
+    margin-bottom: 20px;
+}
 /* change background */
 
 .test{

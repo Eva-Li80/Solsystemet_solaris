@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 //   const solen = document.querySelector("#sun")
+
+
   const aboutPlanet = document.querySelector("#about-planet");
   const planetName = document.getElementById("planet-name");
   const latinName = document.getElementById("latin-name")
@@ -45,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //skapar och lägger in innehållet om planeterna
   function createContent(planet) {
+
     if(aboutPlanet){
         planetName.textContent = planet.name;
         latinName.textContent = planet.latinName
@@ -53,23 +56,20 @@ document.addEventListener("DOMContentLoaded", function () {
         aboutPlanet.appendChild(latinName)
         aboutPlanet.appendChild(description)
 
-        circumference.textContent = planet.circumference
-        distance.textContent = planet.distance
-        maxTemp.textContent = planet.temp.day
-        minTemp.textContent = planet.temp.night
+        circumference.innerHTML = `<h3>OMKRETS</h3> <p>${planet.circumference}</p>`
+        distance.innerHTML = `<h3>OMKRETS</h3> <p>${planet.distance}</p>`
+        maxTemp.innerHTML = `<h3>OMKRETS</h3> <p>${planet.temp.day}</p>`
+        minTemp.innerHTML = `<h3>OMKRETS</h3> <p>${planet.temp.night}</p>`
         moreInfo.append(circumference)
         moreInfo.append(distance)
         moreInfo.append(maxTemp)
         moreInfo.append(minTemp)
 
-        moons.textContent = planet.moons || ""
+        moons.innerHTML = `<h3>OMKRETS</h3> <p>${planet.moons || ""}</p>`
         moonsInfo.append(moons)
     }else {
         console.error("element is null")
     }
-   
-
-
   }
 
 
@@ -85,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
         createContent(planet);
         currentPlanet = infoPlanet;
         // solen.style.backgroundColor = "red"
+        aboutPlanet.style.display = "block"
         
       } else {
         console.log("Something went wrong!");
