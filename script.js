@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const mars = document.querySelector("#mars");
   const jupiter = document.querySelector("#jupiter");
   const saturnus = document.querySelector("#saturnus");
-  const uranus = document.querySelector("#mercurius");
+  const uranus = document.querySelector("#uranus");
   const neptunus = document.querySelector("#neptunus");
 
 
