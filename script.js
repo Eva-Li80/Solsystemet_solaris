@@ -13,8 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const uranus = document.querySelector("#uranus");
   const neptunus = document.querySelector("#neptunus");
 
-//   const solen = document.querySelector("#sun")
-
   const aboutPlanet = document.querySelector("#about-planet");
   const planetName = document.getElementById("planet-name");
   const latinName = document.getElementById("latin-name");
@@ -35,6 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
   closeModule.innerHTML = "&times;";
   module.appendChild(closeModule);
 
+  const heading = document.querySelector("#heading")
+  const subHeading = document.querySelector("#subheading")
+
   let currentPlanet;
  
  //hämtar api
@@ -53,6 +54,17 @@ document.addEventListener("DOMContentLoaded", function () {
   function closeModuleWithX() {
     closeModule.addEventListener("click" ,() => {
        module.style.display = "none"
+       heading.classList.remove("active");
+       subHeading.classList.remove("active");
+       sun.classList.remove("active");
+       mercurius.classList.remove("active")
+       venus.classList.remove("active")
+       earth.classList.remove("active")
+       mars.classList.remove("active")
+       jupiter.classList.remove("active")
+       saturnus.classList.remove("active")
+       uranus.classList.remove("active")
+       neptunus.classList.remove("active")
        currentPlanet = "";
     })
   }
@@ -107,8 +119,18 @@ document.addEventListener("DOMContentLoaded", function () {
       if (planet) {
         createContent(planet);
         currentPlanet = infoPlanet;
-     
         module.style.display ="block"
+        heading.classList.add("active");
+        subHeading.classList.add("active");
+        sun.classList.add("active");
+        mercurius.classList.add("active")
+        venus.classList.add("active")
+        earth.classList.add("active")
+        mars.classList.add("active")
+        jupiter.classList.add("active")
+        saturnus.classList.add("active")
+        uranus.classList.add("active")
+        neptunus.classList.add("active")
       } else {
         console.log("Something went wrong!");
       }

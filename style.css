@@ -71,7 +71,7 @@
     color: white;
   }
   
-  #planets #mercurius {
+  #mercurius {
     width: 15px;
     height: 15px;
     border-radius: 50%;
@@ -79,49 +79,49 @@
     margin-left: 150px;
   }
   
-  #planets #venus {
+  #venus {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     background-color: rgb(216, 216, 216);
   }
   
-  #planets #earth {
+  #earth {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     background-color: rgb(102, 141, 251);
   }
   
-  #planets #mars {
+  #mars {
     width: 15px;
     height: 15px;
     border-radius: 50%;
     background-color: rgb(252, 84, 84);
   }
   
-  #planets #jupiter {
+  #jupiter {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     background-color: rgb(255, 161, 84);
   }
   
-  #planets #saturnus {
+  #saturnus {
     width: 90px;
     height: 90px;
     border-radius: 50%;
     background-color: rgb(198, 168, 104);
   }
   
-  #planets #uranus {
+  #uranus {
     width: 60px;
     height: 60px;
     border-radius: 50%;
     background-color: rgb(200, 229, 252);
   }
   
-  #planets #neptunus {
+  #neptunus {
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -189,3 +189,23 @@
   /* change background */
 
 
+  #sun.active{
+    background-color: blue;
+  }
+
+  #heading.active, 
+  #subheading.active{
+    display: none;
+  }
+
+
+  #mercurius.active,
+  #venus.active,
+  #earth.active,
+  #mars.active,
+  #jupiter.active,
+  #saturnus.active,
+  #uranus.active,
+  #neptunus.active{
+    display: none;
+  }
