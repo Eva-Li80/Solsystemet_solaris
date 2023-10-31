@@ -2,7 +2,7 @@ const url = "https://majazocom.github.io/Data/solaris.json";
 
 //säkerthetsställer att document laddas innan javascript
 document.addEventListener("DOMContentLoaded", function () {
-
+    
   const sun = document.querySelector("#sun");
   const mercurius = document.querySelector("#mercurius");
   const venus = document.querySelector("#venus");
@@ -13,29 +13,34 @@ document.addEventListener("DOMContentLoaded", function () {
   const uranus = document.querySelector("#uranus");
   const neptunus = document.querySelector("#neptunus");
 
-
-//   const solen = document.querySelector("#sun")
-
+  //   const solen = document.querySelector("#sun")
 
   const aboutPlanet = document.querySelector("#about-planet");
   const planetName = document.getElementById("planet-name");
-  const latinName = document.getElementById("latin-name")
-  const description = document.getElementById("description")
+  const latinName = document.getElementById("latin-name");
+  const description = document.getElementById("description");
 
   const moreInfo = document.querySelector("#more-info");
-  const circumference = document.getElementById("circumference")
-  const distance = document.getElementById("distance")
-  const maxTemp = document.getElementById("max-temp")
-  const minTemp = document.getElementById("min-temp")
+  const circumference = document.getElementById("circumference");
+  const distance = document.getElementById("distance");
+  const maxTemp = document.getElementById("max-temp");
+  const minTemp = document.getElementById("min-temp");
 
-  const moonsInfo = document.querySelector("#moons-info")
-  const moons = document.getElementById("moons")
+  const moonsInfo = document.querySelector("#moons-info");
+  const moons = document.getElementById("moons");
+
+  const module = document.getElementById("module");
+  const closeModule = document.createElement("div");
+  closeModule.classList.add("close")
+  closeModule.innerHTML = "&times;";
+  module.appendChild(closeModule);
 
   let currentPlanet;
-
-  async function fetchApi(url) {
+ 
+ //hämtar api
+  async function fetchApi(apiUrl) {
     try {
-      const response = await fetch(url);
+      const response = await fetch(apiUrl);
       if (response.ok) {
         return response.json();
       }
@@ -44,34 +49,39 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  //stänger modulen
+  function closeModuleWithX() {
+    closeModule.addEventListener("click" ,() => {
+       module.style.display = "none"
+       currentPlanet = "";
+    })
+  }
 
   //skapar och lägger in innehållet om planeterna
   function createContent(planet) {
+    if (aboutPlanet) {
+      planetName.textContent = planet.name;
+      latinName.textContent = planet.latinName;
+      description.textContent = planet.desc;
+      aboutPlanet.appendChild(planetName);
+      aboutPlanet.appendChild(latinName);
+      aboutPlanet.appendChild(description);
 
-    if(aboutPlanet){
-        planetName.textContent = planet.name;
-        latinName.textContent = planet.latinName
-        description.textContent = planet.desc
-        aboutPlanet.appendChild(planetName);
-        aboutPlanet.appendChild(latinName)
-        aboutPlanet.appendChild(description)
+      circumference.innerHTML = `<h3>OMKRETS</h3> <p>${planet.circumference}</p>`;
+      distance.innerHTML = `<h3>OMKRETS</h3> <p>${planet.distance}</p>`;
+      maxTemp.innerHTML = `<h3>OMKRETS</h3> <p>${planet.temp.day}</p>`;
+      minTemp.innerHTML = `<h3>OMKRETS</h3> <p>${planet.temp.night}</p>`;
+      moreInfo.append(circumference);
+      moreInfo.append(distance);
+      moreInfo.append(maxTemp);
+      moreInfo.append(minTemp);
 
-        circumference.innerHTML = `<h3>OMKRETS</h3> <p>${planet.circumference}</p>`
-        distance.innerHTML = `<h3>OMKRETS</h3> <p>${planet.distance}</p>`
-        maxTemp.innerHTML = `<h3>OMKRETS</h3> <p>${planet.temp.day}</p>`
-        minTemp.innerHTML = `<h3>OMKRETS</h3> <p>${planet.temp.night}</p>`
-        moreInfo.append(circumference)
-        moreInfo.append(distance)
-        moreInfo.append(maxTemp)
-        moreInfo.append(minTemp)
-
-        moons.innerHTML = `<h3>OMKRETS</h3> <p>${planet.moons || ""}</p>`
-        moonsInfo.append(moons)
-    }else {
-        console.error("element is null")
+      moons.innerHTML = `<h3>OMKRETS</h3> <p>${planet.moons || ""}</p>`;
+      moonsInfo.append(moons);
+    } else {
+      console.error("element is null");
     }
   }
-
 
   // visar info om de olika planeterna
   async function displayInfoFromPlanet(infoPlanet) {
@@ -85,19 +95,19 @@ document.addEventListener("DOMContentLoaded", function () {
         createContent(planet);
         currentPlanet = infoPlanet;
         // solen.style.backgroundColor = "red"
-        aboutPlanet.style.display = "block"
-        
+        module.style.display ="block"
       } else {
         console.log("Something went wrong!");
       }
     } catch (error) {
-        console.error("Error fetching data:", error);
+      console.error("Error fetching data:", error);
       throw new Error("Something went wrong!", error);
     }
+
+    closeModuleWithX()
   }
 
-
-  //eventlistener till de olika planeterna
+  //För att kunna trycka på och öppna de olika planeterna
   sun.addEventListener("click", async () => {
     await displayInfoFromPlanet("solen");
   });
@@ -112,13 +122,17 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   mars.addEventListener("click", async () => {
     await displayInfoFromPlanet("mars");
+    console.log(mars)
   });
   jupiter.addEventListener("click", async () => {
     await displayInfoFromPlanet("jupiter");
+    console.log(jupiter)
   });
   saturnus.addEventListener("click", async () => {
     await displayInfoFromPlanet("saturnus");
+    console.log(saturnus)
   });
+
   uranus.addEventListener("click", async () => {
     await displayInfoFromPlanet("uranus");
   });
