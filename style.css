@@ -58,7 +58,7 @@
     margin-left: -400px;
     overflow: hidden;
   }
-  
+
   #planets {
     display: flex;
     justify-content: center;
@@ -184,9 +184,8 @@
     flex: 0 0 calc(50% - 10px);
     margin-bottom: 20px;
   }
+
+
   /* change background */
-  
-  /* .test{
-      background-color: blue;
-  } */
-  
+
+

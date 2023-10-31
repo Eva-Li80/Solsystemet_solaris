@@ -2,7 +2,7 @@ const url = "https://majazocom.github.io/Data/solaris.json";
 
 //säkerthetsställer att document laddas innan javascript
 document.addEventListener("DOMContentLoaded", function () {
-    
+
   const sun = document.querySelector("#sun");
   const mercurius = document.querySelector("#mercurius");
   const venus = document.querySelector("#venus");
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const uranus = document.querySelector("#uranus");
   const neptunus = document.querySelector("#neptunus");
 
-  //   const solen = document.querySelector("#sun")
+//   const solen = document.querySelector("#sun")
 
   const aboutPlanet = document.querySelector("#about-planet");
   const planetName = document.getElementById("planet-name");
@@ -57,6 +57,19 @@ document.addEventListener("DOMContentLoaded", function () {
     })
   }
 
+  //för att månarna ska visas på ett bra sätt
+  function moonsStyle(planet){
+    const moonsArray = [];
+    const moonRow = 6;
+
+    for(let i = 0; i < planet.moons.length; i += moonRow){
+        const row = planet.moons.slice(i, i + moonRow);
+        moonsArray.push(row.join(",  "))
+    }
+
+    return moonsArray.join("<br>")
+  }
+
   //skapar och lägger in innehållet om planeterna
   function createContent(planet) {
     if (aboutPlanet) {
@@ -68,15 +81,15 @@ document.addEventListener("DOMContentLoaded", function () {
       aboutPlanet.appendChild(description);
 
       circumference.innerHTML = `<h3>OMKRETS</h3> <p>${planet.circumference}</p>`;
-      distance.innerHTML = `<h3>OMKRETS</h3> <p>${planet.distance}</p>`;
-      maxTemp.innerHTML = `<h3>OMKRETS</h3> <p>${planet.temp.day}</p>`;
-      minTemp.innerHTML = `<h3>OMKRETS</h3> <p>${planet.temp.night}</p>`;
+      distance.innerHTML = `<h3>KM FRÅN SOLEN</h3> <p>${planet.distance}</p>`;
+      maxTemp.innerHTML = `<h3>MAX TEMPERATUR</h3> <p>${planet.temp.day}</p>`;
+      minTemp.innerHTML = `<h3>MIN TEMPERATUR</h3> <p>${planet.temp.night}</p>`;
       moreInfo.append(circumference);
       moreInfo.append(distance);
       moreInfo.append(maxTemp);
       moreInfo.append(minTemp);
 
-      moons.innerHTML = `<h3>OMKRETS</h3> <p>${planet.moons || ""}</p>`;
+      moons.innerHTML = `<h3>MÅNAR</h3> <p>${planet.moons ? moonsStyle(planet) : ""}</p>`;
       moonsInfo.append(moons);
     } else {
       console.error("element is null");
@@ -94,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (planet) {
         createContent(planet);
         currentPlanet = infoPlanet;
-        // solen.style.backgroundColor = "red"
+     
         module.style.display ="block"
       } else {
         console.log("Something went wrong!");
