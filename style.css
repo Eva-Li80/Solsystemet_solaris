@@ -187,8 +187,6 @@
 
 
   /* change background */
-
-
   #sun.active{
     background-color: rgb(71, 141, 240);
     box-shadow:
@@ -201,7 +199,6 @@
     display: none;
   }
 
-
   #mercurius.active,
   #venus.active,
   #earth.active,
@@ -212,3 +209,24 @@
   #neptunus.active{
     display: none;
   }
+
+  .stars.active {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stars{
+    display: none;
+}
+
+.star::after{
+    content: "\2605";
+    font-size: 10px;
+    pointer-events: none;
+    z-index: -5;
+    padding: 100px;
+}
