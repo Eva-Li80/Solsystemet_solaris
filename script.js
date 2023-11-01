@@ -91,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
       uranus.classList.remove("active");
       neptunus.classList.remove("active");
       stars.classList.remove("active");
+      closeModule.classList.remove("active");
       currentPlanet = "";
     });
   }
@@ -161,6 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
         uranus.classList.add("active");
         neptunus.classList.add("active");
         stars.classList.add("active");
+        closeModule.style.display ="block"
       } else {
         console.log("Something went wrong!");
       }
