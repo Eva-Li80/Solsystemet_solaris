@@ -118,10 +118,10 @@ document.addEventListener("DOMContentLoaded", function () {
       aboutPlanet.appendChild(latinName);
       aboutPlanet.appendChild(description);
 
-      circumference.innerHTML = `<h3>OMKRETS</h3> <p>${planet.circumference} KM</p>`;
-      distance.innerHTML = `<h3>KM FRÅN SOLEN</h3> <p>${planet.distance} KM</p>`;
-      maxTemp.innerHTML = `<h3>MAX TEMPERATUR</h3> <p>${planet.temp.day} C</p>`;
-      minTemp.innerHTML = `<h3>MIN TEMPERATUR</h3> <p>${planet.temp.night} C</p>`;
+      circumference.innerHTML = `<h3>OMKRETS</h3> <p>${planet.circumference} km</p>`;
+      distance.innerHTML = `<h3>KM FRÅN SOLEN</h3> <p>${planet.distance} km</p>`;
+      maxTemp.innerHTML = `<h3>MAX TEMPERATUR</h3> <p>${planet.temp.day}C</p>`;
+      minTemp.innerHTML = `<h3>MIN TEMPERATUR</h3> <p>${planet.temp.night}C</p>`;
       moreInfo.append(circumference);
       moreInfo.append(distance);
       moreInfo.append(maxTemp);
