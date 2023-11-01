@@ -66,7 +66,7 @@
   }
   
   #planets > div {
-    margin: 0 45px;
+    margin: 0 65px;
     cursor: pointer;
     color: white;
   }
@@ -104,7 +104,7 @@
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background-color: rgb(255, 161, 84);
+    background-color: rgb(254, 158, 97);
   }
   
   #saturnus {
@@ -112,6 +112,17 @@
     height: 90px;
     border-radius: 50%;
     background-color: rgb(198, 168, 104);
+  }
+
+  #around-saturnus{
+    width: 150px;
+    height: 3px;
+    background: radial-gradient(circle,  rgb(213, 213, 213) 30%, gray 70%);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) rotate(150deg);
+    border-radius: 50%;
   }
   
   #uranus {
@@ -133,7 +144,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-55%, -55%);
     padding: 20px;
     color: white;
   }
@@ -185,13 +196,20 @@
     margin-bottom: 20px;
   }
 
+  #about-planet #description, #circumference, #distance, #max-temp, #min-temp, #moons{
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: rgb(218, 218, 218);
+    font-family: "'Roboto Light', sans-serif";
+  }
+
 
   /* change background */
   #sun.active{
     background-color: rgb(71, 141, 240);
     box-shadow:
-      0 0 0 20px rgb(42, 46, 107),
-      0 0 0 40px rgb(29, 29, 86); 
+      3px 3px 3px 35px rgb(36, 41, 100),
+      6px 6px 6px 70px rgb(29, 29, 86); 
   }
 
   #heading.active, 
