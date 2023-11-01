@@ -8,8 +8,6 @@
 [X]Allt i godkänt uppnåt
 [X]Att koden är uppdelad i moduler, där man skrivit en kommentar i varje modul och varför man delat upp det som man har gjort.
 
-
-
-För att starta: Open with live server
+För att starta: main.html/Open with live server
 
 Av: Eva-Li Nätynki Bodén
