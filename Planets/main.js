@@ -2,8 +2,8 @@ const url = "https://majazocom.github.io/Data/solaris.json";
 
 //säkerthetsställer att document laddas innan javascript
 document.addEventListener("DOMContentLoaded", function () {
-    
-    //komma åt planetelementen
+
+  //komma åt planetelementen
   const sun = document.querySelector("#sun");
   const mercurius = document.querySelector("#mercurius");
   const venus = document.querySelector("#venus");
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const uranus = document.querySelector("#uranus");
   const neptunus = document.querySelector("#neptunus");
 
-  // för att få in data till modulens element
+  // för att få in data till modulen
   const aboutPlanet = document.querySelector("#about-planet");
   const planetName = document.getElementById("planet-name");
   const latinName = document.getElementById("latin-name");
@@ -27,14 +27,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const moonsInfo = document.querySelector("#moons-info");
   const moons = document.getElementById("moons");
 
-  //modulens conatiner element och stänga X elementet
+  //modulens conatiner och stänga X 
   const module = document.getElementById("module");
   const closeModule = document.createElement("div");
   closeModule.classList.add("close");
   closeModule.innerHTML = "&times;";
   module.appendChild(closeModule);
 
-  //heading element
+  //heading 
   const heading = document.querySelector("#heading");
   const subHeading = document.querySelector("#subheading");
 
@@ -52,30 +52,31 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  
   const stars = document.querySelector(".stars");
-
+  
   //för att skapa stjärnor och göra så att dem visas random och med olika färger
   function createStars() {
     const numsOfStars = 40;
-    stars.innerHTML = ""
+    stars.innerHTML = "";
     for (let i = 0; i < numsOfStars; i++) {
       const star = document.createElement("div");
       star.classList.add("star");
 
       if (i % 2 === 0) {
-        star.style.color = "rgb(42, 45, 62)"
-      }
-      else if(i % 2 === 1){
+        star.style.color = "rgb(42, 45, 62)";
+      } else if (i % 2 === 1) {
         star.style.color = "rgb(61, 68, 108)";
       }
       star.style.left = `${Math.random() * 100}vw`;
       star.style.top = `${Math.random() * 100}vh`;
-      star.style.position="absolute"
+      star.style.position = "absolute";
       stars.appendChild(star);
     }
   }
 
-  //stänger modulen
+  /*Stänger modulen. Denna fanns inte med på skissen men jag valde att lägga till den. 
+   Jag anser att det blr mer tydligt, då man kan se var man stänger modulen. */
   function closeModuleWithX() {
     closeModule.addEventListener("click", () => {
       module.style.display = "none";
@@ -136,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  /* använder hämta api funktionen och  visar info om de olika planeterna,
+  /* använder hämta api funktionen och visar info om de olika planeterna,
   då createContent anropas. Även closeModule och createStars amropas i denna function  */
   async function displayInfoFromPlanet(infoPlanet) {
     try {
@@ -161,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
         uranus.classList.add("active");
         neptunus.classList.add("active");
         stars.classList.add("active");
-        closeModule.style.display ="block"
+        closeModule.style.display = "block";
       } else {
         alert("Something went wrong!");
       }
@@ -204,3 +205,8 @@ document.addEventListener("DOMContentLoaded", function () {
     await displayInfoFromPlanet("neptunus");
   });
 });
+
+/*Jag funderade på att bryta ut koden mer i olika filer men landade i att det inte är
+ ett jätte stort projekt. Så jag delade bara upp stylingen så att modulen med den nya bakgrunden har en css fil och
+den övriga stylingen till planeterna i en annan css fil.
+Förövrigt har jag försökt att bryta ut koden till egna funktioner, beroende på vad dem har för uppgift*/ 
