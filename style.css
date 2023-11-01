@@ -19,7 +19,7 @@
     align-items: center;
   }
   
-  /*header*/
+  /*----header----*/
   #solar-system {
     display: flex;
     flex-direction: column;
@@ -43,7 +43,7 @@
     font-size: 1.5rem;
   }
   
-  /*main planet container */
+  /*----main planet container----*/
   #sun-container {
     display: flex;
     position: absolute;
@@ -63,12 +63,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 100px;
   }
   
   #planets > div {
-    margin: 0 65px;
+    margin: 0 55px;
     cursor: pointer;
-    color: white;
   }
   
   #mercurius {
@@ -76,7 +76,7 @@
     height: 15px;
     border-radius: 50%;
     background-color: gray;
-    margin-left: 150px;
+    margin-left: 10rem;
   }
   
   #venus {
@@ -140,13 +140,12 @@
     background-color: rgb(110, 149, 177);
   }
   
-  /*module*/
+  /*----module------*/
   #module {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 20px;
     color: white;
     z-index: 10;
   }
@@ -209,7 +208,7 @@
   }
 
 
-  /* change background */
+  /*----change background----*/
   #sun.active{
     background-color: rgb(71, 141, 240);
     box-shadow:
@@ -218,10 +217,7 @@
   }
 
   #heading.active, 
-  #subheading.active{
-    display: none;
-  }
-
+  #subheading.active,
   #mercurius.active,
   #venus.active,
   #earth.active,
@@ -229,7 +225,8 @@
   #jupiter.active,
   #saturnus.active,
   #uranus.active,
-  #neptunus.active{
+  #neptunus.active,
+  .stars{
     display: none;
   }
 
@@ -240,10 +237,6 @@
     pointer-events: none;
     display: flex;
     flex-wrap: wrap;
-}
-
-.stars{
-    display: none;
 }
 
 .star::after{

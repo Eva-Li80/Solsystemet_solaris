@@ -105,7 +105,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const row = planet.moons.slice(i, i + moonRow);
       moonsArray.push(row.join(",  "));
     }
-
     return moonsArray.join("<br>");
   }
 
@@ -164,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
         stars.classList.add("active");
         closeModule.style.display ="block"
       } else {
-        console.log("Something went wrong!");
+        alert("Something went wrong!");
       }
     } catch (error) {
       console.error("Error fetching data:", error);
