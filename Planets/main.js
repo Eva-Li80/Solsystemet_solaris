@@ -234,3 +234,5 @@ den övriga stylingen till planeterna i en annan css fil.
 Förövrigt har jag försökt att bryta ut koden till egna funktioner, beroende på vad dem har för uppgift och sedan använt dem därefter.
 */
 
+/* Jag har byggt den utefter desktop så den är inte mobilanpassad */ 
+
