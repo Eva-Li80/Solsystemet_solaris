@@ -1,4 +1,4 @@
-const url = "https://majazocom.github.io/Data/solaris.json";
+const url = "https://majazocom.github.io/Data/solaris.json";  //api:et som används för att hämta data/info om planeterna
 
 //säkerthetsställer att document laddas innan javascript
 document.addEventListener("DOMContentLoaded", function () {
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const uranus = document.querySelector("#uranus");
   const neptunus = document.querySelector("#neptunus");
 
-  // Modul elementen hämtas och läggs in i variable
+  // Modul elementen hämtas och läggs in i variabler
   const aboutPlanet = document.querySelector("#about-planet");
   const planetName = document.getElementById("planet-name");
   const latinName = document.getElementById("latin-name");
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const stars = document.querySelector(".stars");
 
-  //Skapar stjärnor och gör så att dem visas random och med olika färger
+  //Skapar stjärnor och gör så att dem visas random och med olika färger beroende på om det är ett udda eller jämnt nummer
   function createStars() {
     const numsOfStars = 40;
     stars.innerHTML = "";
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  //Månarna visas på ett bra sätt och lägger sig på rader under varandra.
+  //Månarna visades inte på ett bra sätt tyckte jag så denna function gör så att de lägger sig på rader under varandra.
   function moonsStyle(planet) {
     const moonsArray = [];
     const moonRow = 6;
@@ -110,8 +110,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   /* Kunde använt slice och join mm i nån function, men för att testa något annat lånade jag denna function addSpacesToNumber() 
-  från nätet för att formatera siffrona (vilket jag hoppas är ok om man säger 
-    att man just lånat den :) )
+  från nätet för att formatera siffrona (vilket jag hoppas är ok att använda om man säger 
+    att man lånat den :) )
   Förklaring:
    \B matchar den exakta positionen där man vill ha mellanslag.
     (?=(\d{3})+(?!\d)) matchar ett mönster 3 siffror som är följt utan 3 siffror sätter mellanslaget där emellan
@@ -194,8 +194,8 @@ document.addEventListener("DOMContentLoaded", function () {
     createStars();
   }
 
-  /*För att kunna trycka på läggs det till en eventlistener och öppnar de olika planeterna anropas displayInfoFromPlanet 
-  som visar modulen med info */
+  /*För att kunna trycka på planeterna läggs det till en eventlistener och displayInfoFromPlanet anropas 
+  och visar info om planeterna beroende på vilken planet man trycker på */
   sun.addEventListener("click", async () => {
     await displayInfoFromPlanet("solen");
   });
@@ -226,9 +226,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
 /*Jag funderade på att bryta ut koden mer i olika filer men landade i att det inte är
  ett jätte stort projekt. Så jag delade bara upp stylingen så att modulen med den nya bakgrunden har en css fil och
 den övriga stylingen till planeterna i en annan css fil.
-Förövrigt har jag försökt att bryta ut koden till egna funktioner, beroende på vad dem har för uppgift
+Förövrigt har jag försökt att bryta ut koden till egna funktioner, beroende på vad dem har för uppgift och sedan använt dem därefter.
 */
 
