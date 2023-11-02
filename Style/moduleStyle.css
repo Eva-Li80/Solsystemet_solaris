@@ -1,4 +1,5 @@
- /*----module------*/
+ /*----module------
+ Här stylas allt som har med modulen och modulens innehåll att göra*/
  #module {
     position: absolute;
     top: 50%;
@@ -18,14 +19,14 @@
   }
   
   #about-planet,
-  #more-info {
+  #planet-details{
     border-bottom: 2px solid gray;
     padding-top: 15px;
   }
   
   #about-planet #planet-name {
     font-family: "Hind", sans-serif;
-    font-size: 2.5rem;
+    font-size: 3rem;
     letter-spacing: 0.3rem;
   }
   
@@ -33,7 +34,8 @@
     font-family: "PT Serif", serif;
     color: rgb(206, 175, 1);
     letter-spacing: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: lighter;
     padding-bottom: 15px;
   }
   
@@ -42,36 +44,47 @@
     padding-bottom: 15px;
   }
   
-  #moons-info {
+  #planet-moons {
     margin-top: 15px;
   }
   
-  #more-info {
+  #planet-details {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
+
+  #planet-details h3, #moons h3{
+    color: white;
+    font-family: "Hind", sans-serif;
+  }
   
-  #more-info > p {
+  #planet-details > p {
     flex: 0 0 calc(50% - 10px);
     margin-bottom: 20px;
   }
 
-  #about-planet #description, #circumference, #distance, #max-temp, #min-temp, #moons{
-    font-size: 13px;
-    letter-spacing: 1px;
-    color: rgb(218, 218, 218);
+ #circumference, #distance, #max-temp, #min-temp, #moons{
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: rgba(230, 228, 228, 0.8);
+    font-family: 'Barlow Condensed', sans-serif;
+    line-height: 25px;
+  }
+  #about-planet #description{
+    font-size: 14px;
+    color: rgba(230, 228, 228, 0.8);
     font-family: 'Barlow Condensed', sans-serif;
     line-height: 25px;
   }
 
-
-  /*----change background when module is open----*/
+  /*----change background when module is open----
+  När modulen öpnnas då kommer denna stylingen upp som bakgrund och solen ändras*/
   #sun.active{
-    background-color: rgb(71, 141, 240);
+    background-color: #478eda;
     box-shadow:
-      3px 3px 3px 35px rgb(36, 41, 100),
-      6px 6px 6px 70px rgb(29, 29, 86); 
+      3px 3px 1px 30px rgb(35, 44, 100),
+      6px 6px 3px 60px rgb(21, 21, 75); 
   }
 
   #heading.active, 
