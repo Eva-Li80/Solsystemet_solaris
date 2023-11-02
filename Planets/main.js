@@ -97,7 +97,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  //Månarna visades inte på ett bra sätt tyckte jag så denna function gör så att de lägger sig på rader under varandra.
+  /* Månarna visades inte på ett bra sätt tyckte jag så denna function gör så att de lägger sig på rader under varandra 
+  med 6 stycken på varje rad om det finns såpass många månar.*/
   function moonsStyle(planet) {
     const moonsArray = [];
     const moonRow = 6;
@@ -227,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-/*Jag funderade på att bryta ut koden mer i olika filer men landade i att det inte är
+/*Jag funderade på att bryta ut koden mer i olika mappar/filer men landade i att det inte är
  ett jätte stort projekt. Så jag delade bara upp stylingen så att modulen med den nya bakgrunden har en css fil och
 den övriga stylingen till planeterna i en annan css fil.
 Förövrigt har jag försökt att bryta ut koden till egna funktioner, beroende på vad dem har för uppgift och sedan använt dem därefter.
