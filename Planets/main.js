@@ -123,7 +123,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //skapar och lägger in innehållet om planeterna. Här i anropas addspaceToNumber och moonsStyle functionen
   function createContent(planet) {
-    if (aboutPlanet) {
       planetName.textContent = planet.name.toUpperCase();
       latinName.textContent = planet.latinName.toUpperCase();
       description.textContent = planet.desc;
@@ -152,17 +151,13 @@ document.addEventListener("DOMContentLoaded", function () {
         planet.moons ? moonsStyle(planet) : ""
       }</p>`;
       planetMoons.append(moons);
-    } else {
-      alert("element is null");
-    }
   }
 
   /* Här i hämtas api med funktionen fetchApi och visar info om de olika planeterna,
   då createContent anropas. Även closeModule och createStars amropas i denna function  */
   async function displayInfoFromPlanet(infoPlanet) {
     try {
-      const api = await fetchApi(url);
-      const data = await api;
+      const data = await fetchApi(url);
       const planet = data.find(
         (p) => p.name.trim().toLowerCase() === infoPlanet.trim().toLowerCase()
       );
